@@ -1,5 +1,4 @@
 let currentDay = dayjs();
-let degSymbol = `\u00B0`;
 let apiKey = "";
 let cityInput = document.querySelector("#city-text");
 let cityForm = document.querySelector("#city-form");
@@ -46,8 +45,7 @@ function userSubmission(event) {
 }
 
 function latLongData(cityName) {
-  let geoAPI =
-    "https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial";
+  let geoAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
   fetch(geoAPI)
     .then(function (response) {
       return response.json();
@@ -133,7 +131,7 @@ function fiveDayForecast(lat, lon) {
 
 let displayPastSearch = function (event) {
   let city = event.target.getAttribute("data-city");
-  latAndLonData(city);
+  latLongData(city);
 };
 
 function defaultView() {
