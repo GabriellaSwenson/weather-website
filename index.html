@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+    <title>Weather Dashboard</title>
   </head>
-  <body>
-    <div class="weather dashboard">Weather Dashboard</div>
+  <body onload = defaultview()"">
+    <header>
+      <h1>Weather Dashboard</h1>
+    </header>
+    <div class = "container">
+      <div class = "row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <h2>Search</h2>
+          <div class = "row">
+            <form id = "search-form" method = "get"></form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
