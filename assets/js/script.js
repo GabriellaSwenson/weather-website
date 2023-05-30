@@ -1,6 +1,53 @@
+let currentDay = dayjs();
+let degSymbol = `\u00B0`;
+let apiKey = "";
+let cityInput = document.querySelector("#city-text");
+let cityForm = document.querySelector("#city-form");
+let searchButton = document.querySelector("#search-btn");
+let cityList = document.querySelector("#city-list");
+let cityCountSpan = document.querySelector("#city-count");
+let clickMeEl = document.querySelector("#city-list-buttons");
+let cities = [];
+function renderCities() {
+  cityList.innerHTML = "";
+  cityCountSpan.textContent = cities.length;
+  for (var i = 0; i < cities.length; i++) {
+    var city = cities[i];
+    var clickMe = document.createElement("button");
+    clickMe.textContent = city;
+    clickMe.classList = "previous-searches btn btn-secondary m-1";
+    clickMe.setAttribute("data-city", city);
+    clickMe.setAttribute("data-index", i);
+    clickMe.setAttribute("type", "submit");
+    cityList.appendChild(clickMe);
+  }
+}
+function init() {
+  let storedCities = JSON.parse(localStorage.getItem("cities"));
+  if (storedCities !== null) {
+    cities = storedCities;
+  }
+  renderCities();
+}
+function storeCities() {
+  localStorage.setItem("cities", JSON.stringify(cities));
+}
+function userSubmission(event) {
+  event.preventDefault();
+  let cityText = cityInput.value;
+  if (cityText === "") {
+    return;
+  }
+  cities.push(cityText);
+  cityInput.value = "";
+  latLongData(cityText);
+  storeCities();
+  renderCities();
+}
+
 function latLongData(cityName) {
   let geoAPI =
-    "https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}";
+    "https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial";
   fetch(geoAPI)
     .then(function (response) {
       return response.json();
