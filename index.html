@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -28,9 +29,75 @@
             </ul>
           </div>
         </div>
-        <div class = "col-xs-12 col-sm-6 col-md-8 col-lg-9" id="right"></div>
+        <div class = "col-xs-12 col-sm-6 col-md-8 col-lg-9" id="right">
+          <section class="row border border-dark p-3 m-1 current-weather top">
+            <div class = "main-forecast" id = "main-forecast">
+              <h2 id="city-name"></h2>
+              <h2 id="current date"></h2>
+              <img src = "" class = "card-body text-center icon" id="icon">
+              <h2 id="weather-conditions"></h2>
+                    </div>
+                    <h3 id="temperature"></h3>
+                    <h3 id="humidity"></h3>
+                    <h3 id="wind-speed"></h3>
+          </section>
+          <section class="five-day forecast">
+            <div class="five-day" id="five-day">
+                <h3>5 Day Forecast</h3>
+            </div>
+           <article class="row card-container">
+             <div>
+                    <section class="bg-primary-subtle col-xs-12 col-md6 col-lg-2 card p-2 m-3">
+                      <p class="weather" id="day1"></p>
+                                <div class="image"><img src="" class="imgClass" id="img1"></div>
+                                <p class="Description" id="day1Description"></p>
+                                <p class="TempValues" id="day1Temp"></p>
+                                <p class="HumValues" id="day1Hum"></p>
+                                <p class="WindSpeed" id="day1Wind"></p>
+                            </section>
+                              <section class="bg-primary-subtle col-xs-12 col-md6 col-lg-2 card p-2 m-3">
+                                <p class="weather" id="day1"></p>
+                                          <div class="image"><img src="" class="imgClass" id="img2"></div>
+                                          <p class="Description" id="day2Description"></p>
+                                          <p class="TempValues" id="day2Temp"></p>
+                                          <p class="HumValues" id="day2Hum"></p>
+                                          <p class="WindSpeed" id="day2Wind"></p>
+                                      </section>
+                                        <section class="bg-primary-subtle col-xs-12 col-md6 col-lg-2 card p-2 m-3">
+                                          <p class="weather" id="day1"></p>
+                                                    <div class="image"><img src="" class="imgClass" id="img3"></div>
+                                                    <p class="Description" id="day3Description"></p>
+                                                    <p class="TempValues" id="day3Temp"></p>
+                                                    <p class="HumValues" id="day3Hum"></p>
+                                                    <p class="WindSpeed" id="day3Wind"></p>
+                                                </section>
+                                                  <section class="bg-primary-subtle col-xs-12 col-md6 col-lg-2 card p-2 m-3">
+                                                    <p class="weather" id="day1"></p>
+                                                              <div class="image"><img src="" class="imgClass" id="img4"></div>
+                                                              <p class="Description" id="day4Description"></p>
+                                                              <p class="TempValues" id="day4Temp"></p>
+                                                              <p class="HumValues" id="day4Hum"></p>
+                                                              <p class="WindSpeed" id="day4Wind"></p>
+                                                          </section>
+                                                          <section class="bg-primary-subtle col-xs-12 col-md6 col-lg-2 card p-2 m-3">
+                                                            <p class="weather" id="day1"></p>
+                                                                      <div class="image"><img src="" class="imgClass" id="img5"></div>
+                                                                      <p class="Description" id="day5Description"></p>
+                                                                      <p class="TempValues" id="day5Temp"></p>
+                                                                      <p class="HumValues" id="day5Hum"></p>
+                                                                      <p class="WindSpeed" id="day5Wind"></p>
+                                                                  </section>
+         </div>
+        </article>
+        </section>
+        </div>
       </div>
     </div>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
   </body>
 </html>
