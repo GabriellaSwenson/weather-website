@@ -83,3 +83,20 @@ function fiveDayForecast(lat, lon) {
       }
     });
 }
+
+let displayPastSearch = function (event) {
+  let city = event.target.getAttribute("data-city");
+  latAndLonData(city);
+};
+
+function defaultView() {
+  document.getElementById("submit-btn").defaultValue = "Minneapolis";
+  latLongData("Minneapolis");
+}
+
+init();
+
+document
+  .getElementById("city-list")
+  .addEventListener("click", displayPastSearch);
+document.getElementById("search-btn").addEventListener("click", userSubmission);
