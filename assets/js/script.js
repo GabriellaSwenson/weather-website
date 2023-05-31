@@ -1,11 +1,11 @@
 let currentDay = dayjs();
-let apiKey = "";
-let cityInput = document.querySelector("#city-text");
-let cityForm = document.querySelector("#city-form");
-let searchButton = document.querySelector("#search-btn");
-let cityList = document.querySelector("#city-list");
+let apiKey = "53bfaaf5f72c277b0dfdcd817fe95509";
+let cityInput = document.querySelector("#city-name");
+let cityForm = document.querySelector("#search-form");
+let searchButton = document.querySelector("#submit-btn");
+let cityList = document.querySelector("#city-searches");
 let cityCountSpan = document.querySelector("#city-count");
-let clickMeEl = document.querySelector("#city-list-buttons");
+let clickMeEl = document.querySelector("#city-searches-button");
 let cities = [];
 function renderCities() {
   cityList.innerHTML = "";
