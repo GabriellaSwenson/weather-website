@@ -142,6 +142,6 @@ function defaultView() {
 init();
 
 document
-  .getElementById("city-list")
+  .getElementById("city-searches")
   .addEventListener("click", displayPastSearch);
-document.getElementById("search-btn").addEventListener("click", userSubmission);
+document.getElementById("submit-btn").addEventListener("click", userSubmission);
