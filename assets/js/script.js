@@ -1,4 +1,5 @@
 let currentDay = dayjs();
+let degSymbol = `\u00B0`;
 let apiKey = "53bfaaf5f72c277b0dfdcd817fe95509";
 let cityInput = document.querySelector("#city-name");
 let cityForm = document.querySelector("#search-form");
@@ -45,7 +46,7 @@ function userSubmission(event) {
 }
 
 function latLongData(cityName) {
-  let geoAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
+  let geoAPI = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
   fetch(geoAPI)
     .then(function (response) {
       return response.json();
@@ -96,15 +97,15 @@ function fiveDayForecast(lat, lon) {
     .then(function (data) {
       console.log(data);
       for (i = 0; i < 40; i += 8) {
-        document.getElementById("day" + (i + 8) + "Temp").innerHTML =
+        document.getElementById("day" + (i + 1) + "Temp").innerHTML =
           "High Temp: " + Math.floor(data.list[i].main.temp_max) + degSymbol;
-        document.getElementById("day" + (i + 8) + "Hum").innerHTML =
+        document.getElementById("day" + (i + 2) + "Hum").innerHTML =
           "Humidity: " + Math.floor(data.list[i].main.humidity) + "%";
-        document.getElementById("day" + (i + 8) + "Description").innerHTML =
+        document.getElementById("day" + (i + 3) + "Description").innerHTML =
           "Conditions: " + data.list[i].weather[0].description;
-        document.getElementById("day" + (i + 8) + "Wind").innerHTML =
+        document.getElementById("day" + (i + 4) + "Wind").innerHTML =
           "Wind Speed: " + data.list[i].wind.speed + "MPH";
-        document.getElementById("img" + (i + 8)).src =
+        document.getElementById("img" + (i + 5)).src =
           "https://openweathermap.org/img/wn/" +
           data.list[i].weather[0].icon +
           ".png";
