@@ -1,0 +1,16 @@
+.main-forecast {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+img {
+  max-height: 50px;
+  max-width: 50px;
+}
+.hidden {
+  display: none;
+}
+input,
+#submit-btn {
+  width: 100%;
+}
