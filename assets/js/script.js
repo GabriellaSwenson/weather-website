@@ -97,15 +97,15 @@ function fiveDayForecast(lat, lon) {
     .then(function (data) {
       console.log(data);
       for (i = 0; i < 40; i += 8) {
-        document.getElementById("day" + (i + 1) + "Temp").innerHTML =
+        document.getElementById("day1" + "Temp").innerHTML =
           "High Temp: " + Math.floor(data.list[i].main.temp_max) + degSymbol;
-        document.getElementById("day" + (i + 2) + "Hum").innerHTML =
+        document.getElementById("day2" + "Hum").innerHTML =
           "Humidity: " + Math.floor(data.list[i].main.humidity) + "%";
-        document.getElementById("day" + (i + 3) + "Description").innerHTML =
+        document.getElementById("day3" + "Description").innerHTML =
           "Conditions: " + data.list[i].weather[0].description;
-        document.getElementById("day" + (i + 4) + "Wind").innerHTML =
+        document.getElementById("day4" + "Wind").innerHTML =
           "Wind Speed: " + data.list[i].wind.speed + "MPH";
-        document.getElementById("img" + (i + 5)).src =
+        document.getElementById("img" + 1).src =
           "https://openweathermap.org/img/wn/" +
           data.list[i].weather[0].icon +
           ".png";
